@@ -18,5 +18,7 @@
 			<dt>Straat:</dt><dd>${locatie.straat} ${locatie.huisNr}</dd>
 			<dt>Gemeente:</dt><dd>${locatie.gemeente.naam} ${locatie.gemeente.postCode}</dd>
 		</dl>
+		<div>Telefoonnummer helpdesk:
+		<a href="tel:+${telefoonNummerHelpDesk.replace('/','')}">${telefoonNummerHelpDesk}</a></div>
 	</body>
 </html>

@@ -15,7 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class frituurserv
  */
-@WebServlet("/index.htm")
+@WebServlet(urlPatterns = "/index.htm",name = "indexservlet")
 public class frituurserv extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private static final String VIEW = "/WEB-INF/JSP/index.jsp";
@@ -30,6 +30,7 @@ public class frituurserv extends HttpServlet {
 		request.setAttribute("openGesloten", weekdag == DayOfWeek.MONDAY || weekdag == DayOfWeek.THURSDAY ? "gesloten" : "open");
 		request.setAttribute("locatie", new Adres("Mortelstraat", "21", new Gemeente("Diepenbeek", 3590)));
 		request.getRequestDispatcher(VIEW).forward(request, response);
+		request.setAttribute("telefoonNummerHelpDesk", request.getServletContext().getInitParameter("telefoonNummerHelpDesk"));
 	}
 
 }
